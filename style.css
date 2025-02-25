@@ -1,0 +1,205 @@
+/* Reset  */
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;   
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+ul {
+    list-style: none;
+}
+input::placeholder {
+    text-transform: uppercase;
+}
+.button {
+    background-color: var(--secondary-clr);
+    border: 2px solid var(--primary-clr);
+    font-size: 18px;
+    color: var(--primary-clr);
+    padding: 6px 12px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    transition:background, color .4s;
+    display: inline-block;
+    margin: 20px 0;
+}
+input.button {
+    width: fit-content;
+    margin: auto;
+    display: inline-block;
+}
+.button:hover{
+    background-color: var(--primary-clr);
+    color: var(--secondary-clr);
+}
+
+input,textarea {
+    width: 100%;
+    margin: 5px;
+    padding: 10px 10px;
+    background-color: #ffffff3a;
+    border: 2px solid #c5b9cbe0;
+    border-radius: 30px;
+}
+textarea {
+    height: 200px;
+}
+h1, h2, h3, h4 {
+    color: #beb3c4;
+    font-weight: normal;
+    text-transform: capitalize;
+}
+p, a, li {
+    color: #807ea1;
+}
+h1, h3 {
+    font-size: 1.2em;
+    text-transform: capitalize;
+}
+h2{
+    font-size: 1.6em;
+}
+h4{
+    font-size: 1.1em;
+}
+.landing .landing-text p {
+    font-size: 1.1em;
+}
+/* variabler  */
+:root {
+    --primary-clr:#ffc636;
+    --secondary-clr:#0a0b5b;
+}
+
+
+/* body */
+body {
+    font-family: "New Tegomin";
+    font-weight: 400;
+    font-style: normal;
+    background:var(--secondary-clr);
+    overflow-x: hidden;
+}
+
+/* font  */
+@font-face {
+    font-family: "New Tegomin";
+    src: url(Assits/font/NewTegomin-Regular.ttf);
+}
+
+/* Mobile Style */
+.grid{
+    display:grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+}
+
+/* Start Nav Style  */
+nav{
+    margin: 0 20px;
+}
+nav >h1 {
+    grid-column: 1 / 4;
+    margin-top: 20px;
+    padding: 0 0 20px 0;
+    border-bottom: 3px solid var(--primary-clr);
+}
+nav >ul{
+    display: none;
+}
+/* End Nav Style  */
+/* Start Landing Style  */
+.landing {
+    padding: 0 20px 20px 20px;
+}
+.landing .landing-text {
+    grid-column: 1 / 6;
+   grid-column: 1 / 5;
+} 
+.landing img {
+    grid-column: 6 / 9;
+    width: 200%;
+}
+/* End Landing Style  */
+
+/* Start Portfolio Style  */
+    .portfolio{
+        padding: 30px 20px;
+        background-image: url(Assits/square_bg.png);
+        background-size: cover;
+    }
+    .portfolio >h3{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .portfolio .project .box {
+        row-gap: 20px;
+        grid-column: 1 / 9;
+        margin: 20px 0;
+    }  
+    .portfolio .project .box:first-child{
+        grid-row: 1;
+    
+    }
+    .portfolio .project .box:nth-child(2){
+        grid-row: 2;
+    }
+    .portfolio .project .box:last-child{
+        grid-row: 3;
+    }
+    .portfolio .project .box img{
+        grid-column: 1/4;
+        width: 100%;
+    }    
+    .portfolio .project .box h4 {
+
+    }
+/* End Portfolio Style  */
+
+/* Small tablet   */
+@media  screen and (min-width: 620px) {
+    
+}
+
+/* Large tablet and Laptop  */
+@media screen and (min-width: 970px){
+    body{
+        font-size: 18px;
+    }
+    .portfolio .project>.box:first-child{
+        grid-column: 1/3;
+    }
+    .portfolio .project>.box:nth-child(2){
+        grid-column: 4/6;
+    }
+    .portfolio .project>.box:last-child{
+        grid-column: 7/9;
+    }
+    .portfolio .project .box img{
+        width: 100%;
+    }
+}
+
+/* Desktop style  */
+@media screen and (min-width: 1200px){
+    body {
+        font-size: 20px;
+    }
+    .portfolio .project>.box:first-child{
+        grid-column: 1/3;
+    }
+    .portfolio .project>.box:nth-child(2){
+        grid-column: 4/6;
+    }
+    .portfolio .project>.box:last-child{
+        grid-column: 7/9;
+    }
+    .portfolio .project .box img{
+        width: 100%;
+    }
+}
