@@ -19,7 +19,6 @@ input::placeholder {
 .button {
     background-color: var(--secondary-clr);
     border: 2px solid var(--primary-clr);
-    font-size: 18px;
     color: var(--primary-clr);
     padding: 6px 12px;
     border-radius: 25px;
@@ -85,85 +84,171 @@ body {
     background:var(--secondary-clr);
     overflow-x: hidden;
 }
+html {
+    scroll-behavior: smooth;
+}
 
 /* font  */
 @font-face {
     font-family: "New Tegomin";
     src: url(Assits/font/NewTegomin-Regular.ttf);
 }
-
-/* Mobile Style */
-.grid{
-    display:grid;
+/* Grid  */
+.grid {
+    display: grid;
     grid-template-columns: repeat(8, 1fr);
-    gap: 10px;
-}
+    gap: 20px;
 
+}
+/* Section  */
+section{
+    padding: 20px 0;
+    overflow: hidden;
+}
+/* Mobile Style */
 /* Start Nav Style  */
-nav{
-    margin: 0 20px;
+.container{
+    width: 100%;
+    padding: 0 20px;
 }
-nav >h1 {
+nav .container h1 {
     grid-column: 1 / 4;
-    margin-top: 20px;
-    padding: 0 0 20px 0;
+    padding-bottom: 15px;
     border-bottom: 3px solid var(--primary-clr);
+    font-size: 1.4em;
 }
-nav >ul{
-    display: none;
+nav .container ul {
+        display: none;
 }
 /* End Nav Style  */
 /* Start Landing Style  */
-.landing {
-    padding: 0 20px 20px 20px;
+.landing .container .landing-text {
+    grid-column: 1 / 5;
 }
-.landing .landing-text {
-    grid-column: 1 / 6;
-   grid-column: 1 / 5;
-} 
-.landing img {
+.landing .container .image{
     grid-column: 6 / 9;
+}
+.landing .container .image img {
     width: 200%;
 }
 /* End Landing Style  */
 
 /* Start Portfolio Style  */
-    .portfolio{
-        padding: 30px 20px;
-        background-image: url(Assits/square_bg.png);
-        background-size: cover;
-    }
-    .portfolio >h3{
-        text-align: center;
-        margin-bottom: 30px;
-    }
-    .portfolio .project .box {
-        row-gap: 20px;
-        grid-column: 1 / 9;
-        margin: 20px 0;
-    }  
-    .portfolio .project .box:first-child{
-        grid-row: 1;
-    
-    }
-    .portfolio .project .box:nth-child(2){
-        grid-row: 2;
-    }
-    .portfolio .project .box:last-child{
-        grid-row: 3;
-    }
-    .portfolio .project .box img{
-        grid-column: 1/4;
-        width: 100%;
-    }    
-    .portfolio .project .box h4 {
-
-    }
+   .portfolio {
+    background-image: url(Assits/square_bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+   }
+   .portfolio .container h3 {
+    text-align: center;
+    margin-bottom: 20px;
+   }
+   .portfolio .container .portfolio-cont .box{
+    grid-column: 1/9;
+        display: flex;
+        align-items: center;
+   }
+   .portfolio .container .portfolio-cont .box .image {
+        flex-basis: 40%;
+        margin-right: 30px;
+   }
+      .portfolio .container .portfolio-cont .box .image  img {
+       width: 100%;
+      }
 /* End Portfolio Style  */
+
+/* Start Skills Style  */
+.skills {
+    background-color: #07083E;
+}
+.skills .container h3 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.skills .container .skills-cont .box{
+    grid-column: span 4;
+    background-color: #15154f;
+    text-align: center;
+    padding: 20px;
+}
+
+.skills .container .skills-cont .box  img {
+    height: 80px;
+    margin: 10px 0;
+}
+.skills .container .skills-cont .box  h4 {
+    margin: 10px 0;
+}
+
+/* End Skills Style  */
+
+/* Start Conatc Section  */
+.contact .container h3{
+    text-align: center;
+    margin: 20px 0;
+}
+.contact .container p {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.contact .container form {
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+    margin: auto;
+    
+}
+.contact .container form input {
+    margin: 15px 0;
+    padding: 10px ;
+}
+/* End Conatc Section  */
+
+/* Start Footer Style  */
+    footer {
+        background-color: #14153D;
+        background-position: center top;
+        background-image: url(Assits/footer_image.png);
+        background-size: 40%;
+        background-repeat: no-repeat;
+        padding: 20px 0;
+    }
+
+    footer .container p{
+        grid-column: 1/5;
+    }
+    footer .container .icon {
+        grid-column: 7 / 9;
+        display: flex;
+        justify-content: flex-end;
+    }
+    footer .container .icon img{
+        width: 20px;
+        margin-left: 10px;
+    }
+/* End Footer Style  */
 
 /* Small tablet   */
 @media  screen and (min-width: 620px) {
-    
+    .container {
+        width: 610px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    .portfolio .container .portfolio-cont .box{
+        grid-column: span 4;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px 0;
+    }
+    .portfolio .container .portfolio-cont .box:last-child {
+        grid-column: 3/span 4;
+    }
+    .portfolio .container .portfolio-cont .box .image img  {
+        height: 180px;
+    }
 }
 
 /* Large tablet and Laptop  */
@@ -171,18 +256,23 @@ nav >ul{
     body{
         font-size: 18px;
     }
-    .portfolio .project>.box:first-child{
-        grid-column: 1/3;
-    }
-    .portfolio .project>.box:nth-child(2){
-        grid-column: 4/6;
-    }
-    .portfolio .project>.box:last-child{
-        grid-column: 7/9;
-    }
-    .portfolio .project .box img{
-        width: 100%;
-    }
+    .container {
+            width: 960px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .skills .container .skills-cont .box {
+            grid-column: span 2;
+        }
+        nav .container ul {
+            display:block;
+            grid-column: 7/9;
+        }
+        nav .container ul li {
+            display: inline-block;
+            margin-right: 10px;
+
+        }
 }
 
 /* Desktop style  */
@@ -190,16 +280,20 @@ nav >ul{
     body {
         font-size: 20px;
     }
-    .portfolio .project>.box:first-child{
-        grid-column: 1/3;
+    .container {
+        width: 1190px;
+        margin: 0 auto;
+        padding: 0 20px;
     }
-    .portfolio .project>.box:nth-child(2){
-        grid-column: 4/6;
+    .portfolio .container .portfolio-cont .box:nth-child(1){
+       grid-column: 2/4;
+    }.portfolio .container .portfolio-cont .box:nth-child(2){
+        grid-column: 4 / 6;
+        margin-top: 155px;
+    }.portfolio .container .portfolio-cont .box:nth-child(3){
+       grid-column: 6/8;
     }
-    .portfolio .project>.box:last-child{
-        grid-column: 7/9;
-    }
-    .portfolio .project .box img{
-        width: 100%;
+    .landing .container .landing-text {
+        align-self: center;
     }
 }
